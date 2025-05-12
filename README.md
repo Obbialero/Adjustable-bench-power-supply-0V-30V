@@ -26,7 +26,8 @@ Questo progetto consiste nella realizzazione di un alimentatore da banco regolab
 
 ## 📦 Distinta Base (BOM)
 
-Consulta la [distinta base completa](#1-distinta-base-bom--bill-of-materials-aggiornata) per tutti i componenti utilizzati, comprensivi di codici, valori e note tecniche.
+Consulta la [Distinta Base completa (BOM.csv)](./BOM.csv) per tutti i componenti utilizzati, comprensivi di codici, valori e note tecniche.
+
 
 ---
 

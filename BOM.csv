@@ -1,0 +1,28 @@
+Rif,Componente,Valore / Tipo,Quantità,Codice / Standard,Note Tecniche
+AC-IN,Ingresso rete,220V AC,1,-,Connettore IEC o morsetto
+F0,Fusibile AC,2A / 250V (slow-blow),1,Littelfuse 37202000411,Protezione lato rete
+BR1,Ponte Raddrizzatore,600V / 6A,1,KBPC606,Raddrizzamento principale
+C0,Condensatore Filtro,470µF / 400V,1,Nichicon LGU2G471MELC45,Filtro post-ponte
+U0,Convertitore Switching,220V AC → 32V DC / 5A,1,LNK623DG / TOPSwitch,Alimentazione principale
+C0b,Condensatore di uscita,470µF / 50V,1,Panasonic EEU-FC1H471L,Post switching converter
+F1,Fusibile DC,6A / 32V (slow-blow),1,Littelfuse 0154006.MRL,Protezione lato DC
+S1,Interruttore ON/OFF,SPST,1,Apem 631H/2,Montaggio su pannello
+U1,IC Buck Converter,XL4016E1,1,XLSEMI XL4016E1,PWM controller 180kHz
+D1,Diodo Schottky,MBR2045CT (45V 20A),1,ON Semi MBR2045CT,Alta efficienza
+L1,Induttore,33µH / ≥6A,1,Coilcraft MSS1278-333MLC,Toroidale o schermato
+C1,Condensatore Elettrolitico IN,470µF / 35V,2,Panasonic EEU-FR1V471,Decoupling primario
+C2,Condensatore Elettrolitico OUT,470µF / 25V,2,Panasonic EEU-FR1E471,Riduzione ripple
+C3,Condensatore Ceramico IN,0.1µF / 50V X7R,1,Murata GRM188R71H104KA93D,Decoupling VIN
+C4,Condensatore Ceramico OUT,0.1µF / 50V X7R,1,Murata GRM188R71H104KA93D,Ripple suppression
+C5,Condensatore Bootstrap,0.1µF / 50V X7R,1,Murata GRM155R71H104KE14D,Bootstrap tra BST e SW
+D2,Diodo Rapido Bootstrap,1N4148,1,ON Semi 1N4148,Da VCC a BST
+R1,Resistenza Partitore Alta,10kΩ / 1%,1,Vishay CMF5510K000FKEB,Regolazione Vout
+R2,Resistenza Partitore Bassa,2kΩ / 1%,1,Vishay CMF552K000FKEB,Insieme a R1
+P1,Potenziometro,10kΩ Multi-giri,1,Bourns 3296W-1-103,Regolazione fine
+R3,Resistenza di Shunt,0.1Ω / 5W,1,Ohmite 45F100E,Per misurazione corrente
+M1,Volt/Amperometro Digitale,DC 0–100V / 10A,1,DROK 200171,Monitoraggio V/I
+Fan,Ventola di Raffreddamento,12V DC 25x25mm,1,Sunon MF25101V1-A99,Consigliata >3A
+Heatsink,Dissipatori TO-220,Dissipazione >25W,2,Fischer SK104/50,Per U1 e D1
+OUT,Connettore Uscita DC,Terminal block 5mm,1,Phoenix 1729128,Uscita regolabile
+Cablaggio,Cavi Alta Corrente,Silicone 16 AWG,--,Alpha Wire 6716,Rosso/nero input/output
+

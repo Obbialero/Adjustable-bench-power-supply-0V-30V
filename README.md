@@ -1,43 +1,43 @@
-# ⚡ Alimentatore da Banco Regolabile (0–20V / 5A) con XL4016
+# ⚡ Adjustable Bench Power Supply (0–20V / 5A) with XL4016
 
-![Versione](https://img.shields.io/badge/version-2.1-blue)  
-![Data](https://img.shields.io/badge/data-22%2F05%2F2024-lightgrey)
+![Version](https://img.shields.io/badge/version-2.1-blue)  
+![Date](https://img.shields.io/badge/data-22%2F05%2F2024-lightgrey)
 
-Un alimentatore da banco regolabile progettato completamente da zero, capace di fornire una tensione variabile da **1.25V a 20V** con una corrente massima di **5A continui**. Il progetto si basa su un convertitore **AC-DC**, seguito da un regolatore **DC-DC step-down (buck)** con **XL4016**.
+A fully custom-designed adjustable bench power supply capable of delivering a variable output from **1.25V to 20V** with a continuous current of up to **5A**. The project uses an **AC-DC converter** followed by a **DC-DC step-down (buck)** regulator based on the **XL4016**.
 
-Tutto il circuito è integrato su un singolo PCB progettato in **EasyEDA**, senza l'uso di moduli prefabbricati.
-
----
-
-## 📌 Specifiche Tecniche
-
-| Caratteristica                | Valore                             |
-|------------------------------|------------------------------------|
-| **Ingresso**                 | 220V AC                            |
-| **Tensione DC interna**      | 32V DC max                         |
-| **Uscita regolabile**        | 1.25V – 20V                        |
-| **Corrente massima**         | 5A continui                        |
-| **Efficienza tipica**        | >80%                               |
-| **Tipologia di conversione** | AC-DC + DC-DC Step-Down (Buck)     |
-| **PCB**                      | Progettato con EasyEDA             |
+The entire circuit is implemented on a single PCB designed in **EasyEDA**, with no pre-assembled modules.
 
 ---
 
-## 📦 Distinta Base (BOM)
+## 📌 Technical Specifications
 
-Consulta la [distinta base completa (BOM.csv)](./hardware/BOM.csv) per la lista dettagliata dei componenti utilizzati, inclusi codici, valori e note tecniche.
+| Feature                        | Value                                 |
+|-------------------------------|---------------------------------------|
+| **Input**                     | 220V AC                               |
+| **Internal DC Voltage**       | Up to 32V DC                          |
+| **Adjustable Output**         | 1.25V – 20V                           |
+| **Max Current**               | 5A continuous                         |
+| **Typical Efficiency**        | >80%                                  |
+| **Conversion Type**           | AC-DC + DC-DC Step-Down (Buck)        |
+| **PCB**                       | Designed using EasyEDA                |
 
 ---
 
-## 📊 Schema a Blocchi
+## 📦 Bill of Materials (BOM)
 
-![Schema a blocchi](./docs/schema_a_blochi.png)
+Refer to the [full Bill of Materials (BOM.csv)](./hardware/BOM.csv) for a detailed list of all components used, including codes, values, and technical notes.
 
 ---
 
-## 🔢 Calcolo della Tensione di Uscita
+## 📊 Block Diagram
 
-La tensione di uscita è regolata tramite un partitore resistivo composto da **R1**, **P1** e **R2**, secondo la formula:
+![Block Diagram](./docs/schema_a_blochi.png)
+
+---
+
+## 🔢 Output Voltage Calculation
+
+The output voltage is controlled via a voltage divider made up of **R1**, **P1**, and **R2**, according to the formula:
 
 Vout = 1.25V × (1 + (R1 + P1) / R2)
 
@@ -45,101 +45,101 @@ yaml
 Copia
 Modifica
 
-### Valori Tipici:
+### Typical Values:
 
 - **R1** = 10kΩ  
 - **R2** = 2kΩ  
-- **P1** = 10kΩ (trimmer variabile)  
-- **Range ottenuto**: ~ **1.25V – 20V**
+- **P1** = 10kΩ (adjustable trimmer)  
+- **Achievable range**: ~ **1.25V – 20V**
 
 ---
 
-## 🛠️ Raccomandazioni per il PCB
+## 🛠️ PCB Design Recommendations
 
-- **Tracce AC**: separate da quelle DC, larghezza ≥ 2mm, isolamento > 3mm
-- **Tracce DC ad alta corrente**: larghezza ≥ 2.5mm per garantire 5A continui
-- **Piano di massa esteso**, idealmente su entrambi i lati del PCB
-- **Via termiche** sotto dissipatori e convertitori per una migliore dissipazione
-- **Condensatori C1 e C3**: il più vicino possibile al pin VIN
-- **Zona AC**: serigrafata, contrassegnata con simboli ⚡ e fisicamente isolata
-- **Ventola e dissipatori**: fortemente consigliati per correnti > 3A
+- **AC traces**: separated from DC, width ≥ 2mm, insulation > 3mm  
+- **High-current DC traces**: width ≥ 2.5mm to ensure continuous 5A  
+- **Extended ground plane**, preferably on both PCB layers  
+- **Thermal vias** below heat sinks and converters for improved dissipation  
+- **C1 and C3 capacitors**: placed as close as possible to the VIN pin  
+- **AC area**: clearly marked with ⚡ symbols and physically isolated  
+- **Fan and heat sinks**: highly recommended for currents > 3A
 
 ---
 
-## 🔍 Monitoraggio (Opzionale)
+## 🔍 Monitoring (Optional)
 
-| Componente       | Descrizione                            |
+| Component         | Description                            |
 |------------------|----------------------------------------|
-| **M1**           | Volt-Amperometro digitale              |
-| **R3**           | Resistenza di shunt 0.1Ω / 5W          |
-| **Connettori**   | Banana jack isolati per uscita         |
+| **M1**           | Digital volt-ammeter                   |
+| **R3**           | 0.1Ω / 5W shunt resistor               |
+| **Connectors**   | Isolated banana jacks for output       |
 
 ---
 
-## 🧱 Sicurezza e Meccanica
+## 🧱 Safety and Mechanics
 
-- **Contenitore ignifugo e ventilato** (ABS V0 o alluminio dissipante)
-- **Protezione lato AC**: fusibile, piste isolate, terminali coperti
-- **Cablaggi AC**: solo con guaina in silicone
-- **Ventilazione forzata**: obbligatoria per correnti > 3A
-- **Zone AC marcate** con simboli ⚡ e distanze di sicurezza appropriate
-
----
-
-## 📂 File Inclusi
-
-- `README.md` – Documentazione del progetto  
-- `schema_blocchi.pdf` – Schema a blocchi  
-- `alimentatore_xl4016.brd / .sch` – File EasyEDA (PCB e schema elettrico)  
-- `distinta_base.xlsx` – Distinta base dettagliata  
-- `BOM.csv` – Lista sintetica dei componenti
+- **Fireproof and ventilated enclosure** (ABS V0 or aluminum with heatsinks)  
+- **AC side protection**: fuse, isolated tracks, covered terminals  
+- **AC wiring**: use only silicone-insulated cables  
+- **Forced ventilation**: mandatory for currents > 3A  
+- **AC areas**: marked with ⚡ symbols and safe distances
 
 ---
 
-## 🖼️ Immagini e PCB
+## 📂 Included Files
 
-### 🔧 Schema Elettrico
+- `README.md` – Project documentation  
+- `schema_blocchi.pdf` – Block diagram  
+- `alimentatore_xl4016.brd / .sch` – EasyEDA files (PCB and schematic)  
+- `distinta_base.xlsx` – Detailed BOM  
+- `BOM.csv` – Simplified component list
+
+---
+
+## 🖼️ Images and PCB Views
+
+### 🔧 Electrical Schematic
 
 ![Schematic](./docs/PNG_AC-DC/Schematic_AC-DC-V1.0.png)
 
-### 📐 Layout PCB - 2D
+### 📐 PCB - 2D Layout
 
 ![PCB](./docs/PNG_AC-DC/PCB_AC-DC-V1.0.png)
 
-### 🖥️ Vista 3D del PCB Assemblato
+### 🖥️ Assembled 3D PCB View
 
 ![3D PCB](./docs/PNG_AC-DC/3D-PCB-AC-DC-V1.0.png)
 
 ---
 
-## 🔍 Componenti Esterni
+## 🔍 External Components
 
-| Componente                         | Link                                   | Quantità |
-|------------------------------------|----------------------------------------|----------|
-| **Volt-Amperometro Digitale**      | [Amazon](https://www.amazon.it/dp/B01MUC149K) | 1        |
-| **Interruttore a bilanciere**      | [TEMU](https://www.temu.com/g-601099550024059.html) | 2        |
-
----
-
-## ⚠️ Avvertenze
-
-> ⚡ **ATTENZIONE: Questo progetto lavora con tensioni di rete (220V AC).**  
-> È necessaria **estrema cautela** durante il montaggio e l'utilizzo.  
-> Riservato a utenti esperti.  
-> Isolare tutte le parti AC, utilizzare un contenitore sicuro e ventilato.
+| Component                      | Link                                                  | Quantity |
+|-------------------------------|-------------------------------------------------------|----------|
+| **Digital Volt-Ammeter**      | [Amazon](https://www.amazon.it/dp/B01MUC149K)         | 1        |
+| **Rocker Switch**             | [TEMU](https://www.temu.com/g-601099550024059.html)   | 2        |
 
 ---
 
-## 📬 Contatti
+## ⚠️ Warnings
 
-Per domande o suggerimenti:  
+> ⚡ **WARNING: This project operates at mains voltage (220V AC).**  
+> Extreme caution is required during assembly and use.  
+> Intended for experienced users only.  
+> Always insulate AC sections and use a safe, ventilated enclosure.
+
+---
+
+## 📬 Contact
+
+For questions or suggestions:  
 **Andrea Obbialero** – [https://obbialero.github.io/](https://obbialero.github.io/)
 
 ---
 
-## 📘 Licenza
+## 📘 License
 
-Questo progetto è distribuito con licenza **MIT**.  
-È liberamente utilizzabile per scopi personali, educativi e commerciali, a condizione di fornire attribuzione.
+This project is released under the **MIT License**.  
+It is free for personal, educational, and commercial use, provided proper attribution is given.
 
 ---
